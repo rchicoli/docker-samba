@@ -1,0 +1,11 @@
+[Unit]
+Description=Samba4 AD DC
+After=network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/samba/sbin/samba -D
+PIDFile=/usr/local/samba/var/run/samba.pid
+
+[Install]
+WantedBy=multi-user.target
